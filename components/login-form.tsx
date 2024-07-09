@@ -29,7 +29,7 @@ export function LoginForm() {
           <Button type="submit" className="w-full">
             Log In
           </Button>
-          <Link href="/auth/register" className="mt-3 underline">Don't have an account? Create One</Link>
+          <Link href="/auth/register" className="mt-3 underline">Do not have an account? Create One</Link>
         </CardFooter>
       </form>
     </Card>
