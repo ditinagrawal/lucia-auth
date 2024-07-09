@@ -4,6 +4,7 @@ import { SessionCollection, UserCollection } from "./db";
 import { cache } from "react";
 import { cookies } from "next/headers";
 
+// @ts-ignore
 const adapter = new MongodbAdapter(SessionCollection, UserCollection);
 
 export const lucia = new Lucia(adapter, {
@@ -21,6 +22,7 @@ export const lucia = new Lucia(adapter, {
 });
 
 export const validateRequest = cache(
+    // @ts-ignore
     async (): Promise<{ user: UserCollection; session: SessionCollection } | { user: null; session: null }> => {
         const sessionId = cookies().get(lucia.sessionCookieName)?.value ?? null;
         if (!sessionId) {
